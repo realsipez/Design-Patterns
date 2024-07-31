@@ -5,13 +5,13 @@ public final class GreetingSingleton {
     private static GreetingSingleton INSTANCE;
     private String message;
 
-    private GreetingSingleton(String name) {
-        setMessage(name);
+    private GreetingSingleton(String message) {
+        setMessage(message);
     }
 
-    public static GreetingSingleton getInstance(String name) {
+    public static GreetingSingleton getInstance(String message) {
         if (INSTANCE == null) {
-            INSTANCE = new GreetingSingleton(name);
+            INSTANCE = new GreetingSingleton(message);
         }
         return INSTANCE;
     }
@@ -20,7 +20,7 @@ public final class GreetingSingleton {
         return message;
     }
 
-    private void setMessage(String name) {
-        this.message = "Hello " + name;
+    private void setMessage(String message) {
+        this.message = message;
     }
 }
